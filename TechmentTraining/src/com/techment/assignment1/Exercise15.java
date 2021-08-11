@@ -1,23 +1,21 @@
-package com.techment.assignment2;
+package com.techment.assignment1;
 
 import java.util.Scanner;
 
-public class Exercise4 {
+public class Exercise15 {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
+		int flag=1;
 		
 		System.out.println("Enter number of elements in array1:");
 		int num1=sc.nextInt();
 		System.out.println("Enter number of elements in array2:");
 		int num2=sc.nextInt();
 		
-		int num3=num1+num2;
-
 		int array1[] = new int[num1];
 		int array2[] = new int[num2];
-		int array3[] = new int[num3];
 
 		for(int i=0; i<num1;i++)
 		{
@@ -27,15 +25,18 @@ public class Exercise4 {
 		{
 				array2[j]=sc.nextInt();
 		}
-
-		for(int i=0; i<num1 ; i++)
-			array3[i]=array1[i];
-		for(int i=num1,j=0; i<num3 ; i++,j++)
-			array3[i]=array2[j];
-
-		for(int i=0;i<num3;i++)
+		for(int i=0,j=0; (i<num1 && j<num2) ;i++,j++)
 		{
-			System.out.print(array3[i]+" ");
+			if(array1[i]==array2[j])
+				continue;
+			else
+				flag=0;
 		}
+		if(flag==1)
+			System.out.println("Both arrays are same");
+		else
+			System.out.println("Both arrays are not same");
+
 	}
+
 }
